@@ -486,4 +486,4 @@ async def on_scheduled(controller, env, ctx):
         if sensor_data["last_notified_status"] != "Ideal":
             await env.DB.prepare(
                 "UPDATE current_state SET last_notified_status = 'Ideal' WHERE id = 1"
-            ).run()s
+            ).run()
