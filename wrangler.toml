@@ -1,0 +1,18 @@
+name = "verdolink-bot"
+main = "src/entry.py"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["python_workers"]
+
+# Cron Trigger para ejecutar on_scheduled cada hora en punto
+[triggers]
+crons = ["0 * * * *"]
+
+# Enlace a la base de datos D1
+[[d1_databases]]
+binding = "DB"
+database_name = "verdolink-db"
+database_id = "b8dbe66d-b90d-4a60-8685-36d6f3d8f02f"
+
+[vars]
+GROQ_MODEL = "openai/gpt-oss-20b"
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
